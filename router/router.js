@@ -55,8 +55,8 @@ router.use(cors());
 router.use(express.json());
 router.use(express.urlencoded({extended:true}));
 
-// router.use('/images', express.static('images'));
-router.use('./images', express.static('images'));
+router.use('/images', express.static('images'));
+// router.use('./images', express.static('images'));
 
 // Register User
 router.post('/adduser',(req,res)=>{
