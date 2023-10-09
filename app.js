@@ -15,7 +15,8 @@ require('dotenv').config()
 const PORT=process.env.PORT;
 
 const api=require("./router/router");
-app.use('/',api);
+// app.use('/',api);
+app.use('/api',api);
 
 const path=require('path');
 app.use(express.static(`./dist/frontend`));
