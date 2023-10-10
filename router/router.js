@@ -14,7 +14,7 @@ const Review = require('../model/ratingschema')
 
 require('dotenv').config()
 
-const directory='./images'
+const directory='../images'
 const storage=multer.diskStorage({
   destination:(req,file,cb)=>{
     cb(null,directory)
