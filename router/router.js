@@ -203,7 +203,7 @@ router.delete('/api/deletemess/:_id',verifytoken,(req, res) => {
 // Add movie
 router.post('/api/addmovie',verifytoken, upload.single('image'), async (req, res) => {
   console.log(req.body);
-  const url=req.protocol + '://' + req.get('host');
+  // const url=req.protocol + '://' + req.get('host');
   try {
     const newMovie = new Movie({
       name: req.body.name,
@@ -216,7 +216,7 @@ router.post('/api/addmovie',verifytoken, upload.single('image'), async (req, res
       seatsbooked : req.body.seatsbooked,
       price: req.body.price,
       screen: req.body.screen,
-      image: url+'/images/'+req.file.filename,
+      image: './images/'+req.file.filename,
     });
     await newMovie.save();
     res.json({ message: 'Movie Added' });
